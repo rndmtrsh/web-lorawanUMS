@@ -1,0 +1,4 @@
+mosquitto_sub -h 192.168.0.232 -u wisgate -P 'lorawanums' -F '%p' -t 'application/+/device/+/rx' | jq -c .
+
+sudo systemctl daemon-reload
+sudo systemctl restart flask_api_lorawan.service
